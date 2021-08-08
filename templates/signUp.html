@@ -11,11 +11,18 @@
 </head>
 <body>
     <h1>SIGN UP</h1>
-    <form>
+    <form action="/createaccount" method="POST">
     {% if message %}
-      <p class="message"><font color="red">{{ message | safe }}</font></p>
+      <p class="message"><font color="red"><b>{{ message | safe }}</b></font></p>
     {% endif %}
-        <div class="mb-3" action="/createAccount" method="POST">
+    <p>
+    <b>NOTE:</b>
+    Your username(email) and password will be used to login.
+    We also need your email to send you some messages in your inbox.
+    For other fields, you can type whatever you would like. (It is okay
+    if you input fake Date Of Birth, Hobby and Favorite Color Info)
+
+        <div class="mb-3">
           <label for="email" class="form-label">Email address(will act as username)</label>
           <input type="email" class="form-control" id="email" name="email">
         </div>

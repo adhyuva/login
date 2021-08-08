@@ -13,12 +13,18 @@
     <h1>LOGIN</h1>
     <form action='/mainpage' method='POST'>
         <div class="mb-3">
+          {% if success %}
+          <p class="success"><font color="LawnGreen"><b>{{ success | safe }}</b></font></p>
+          {% endif %}
+          {% if error %}
+          <p class="error"><font color="red"><b>{{ error | safe }}</b></font></p>
+          {% endif %}
             <label for="Email" class="form-label">Email</label>
-            <input type="text" class="form-control" id="Email">
+            <input type="text" class="form-control" id="email" name="email">
           </div>
         <div class="mb-3">
           <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password">
+          <input type="password" class="form-control" id="password" name = "password">
         </div>
         <button type="submit" class="btn btn-primary">Login!</button>
         <button type="button" class="btn btn-secondary" onclick='window.location="/signup"'>Don't Have an Account? <u>Sign up</u></button>
